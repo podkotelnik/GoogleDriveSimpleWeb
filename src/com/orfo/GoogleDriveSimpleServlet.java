@@ -2,7 +2,6 @@ package com.orfo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.*;
@@ -12,9 +11,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.drive.Drive;
-import com.google.api.services.drive.Drive.Files;
 import com.google.api.services.drive.model.File;
-import com.google.api.services.drive.model.FileList;
 
 @SuppressWarnings("serial")
 public class GoogleDriveSimpleServlet extends HttpServlet {
