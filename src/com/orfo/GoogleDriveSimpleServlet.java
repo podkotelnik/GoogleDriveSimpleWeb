@@ -24,11 +24,11 @@ public class GoogleDriveSimpleServlet extends HttpServlet {
   /** The URL suffix of the servlet */
   public static final String URL_MAPPING          = "/oauth2callback";
 
-  HttpTransport              httpTransport        = new NetHttpTransport();
+  protected HttpTransport    httpTransport        = new NetHttpTransport();
 
-  JacksonFactory             jsonFactory          = new JacksonFactory();
+  protected JacksonFactory   jsonFactory          = new JacksonFactory();
 
-  CredentialDAO              credentialDAO        = new CredentialDAO();
+  protected CredentialDAO    credentialDAO        = new CredentialDAO();
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -62,7 +62,7 @@ public class GoogleDriveSimpleServlet extends HttpServlet {
     }
 
     Drive drive = new Drive.Builder(httpTransport, jsonFactory, credential).build();
-    
+
     out.print("<!DOCTYPE html PUBLIC  \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">");
     out.print("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">");
     out.print("<head>");
